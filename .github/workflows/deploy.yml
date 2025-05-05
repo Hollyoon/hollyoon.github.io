@@ -1,6 +1,9 @@
-name: Deploy # Actions 显示的名字，随意设置
+name: Deploy Hexo to Github Pages # Actions 显示的名字，随意设置
 
-on: [push] # 监听到 push 事件后触发
+on: 
+  push: # 监听到 push 事件后触发
+  branches:
+    - master
 
 jobs:
   build:
@@ -23,9 +26,7 @@ jobs:
 
       - name: Hexo Generate # 安装 Hexo 依赖并且生成静态文件
         run: |
-          rm -rf ./public
-          yarn run clean
-          yarn run build
+          npx hexo generate
 
       - name: Hexo Deploy # 部署步骤，这里以 hexo deploy 为例
         env:
@@ -39,4 +40,4 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "$GIT_NAME"
           git config --global user.email "$GIT_EMAIL"
-          yarn run deploy
+          npx hexo deploy
