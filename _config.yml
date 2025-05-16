@@ -103,5 +103,5 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://<GH_TOKEN>@github.com/Hollyoon/hollyoon.github.io.git
+  repo: https://github.com/Hollyoon/hollyoon.github.io.git
   branch: gh-pages
