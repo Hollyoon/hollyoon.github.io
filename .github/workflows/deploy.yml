@@ -3,7 +3,7 @@ name: Deploy Hexo Blog
 on:
   push:
     branches:
-      - main  # 或者 master，看你主分支名称
+      - master  # 或者 master，看你主分支名称
 
 jobs:
   build-deploy:
