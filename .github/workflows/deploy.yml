@@ -28,6 +28,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.SSH_PRIVATE }}
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions"
+          git config --global user.email "1096316446@qq.com"
+          git config --global user.name "Hollyoon"
           npx hexo deploy
