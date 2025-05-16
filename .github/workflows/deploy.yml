@@ -26,8 +26,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         env:
-          GH_TOKEN: ${{ secrets.SSH_PRIVATE }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.email "1096316446@qq.com"
-          git config --global user.name "Hollyoon"
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
           npx hexo deploy
