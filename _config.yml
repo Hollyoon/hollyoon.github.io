@@ -7,7 +7,7 @@ title: Hollyoon
 subtitle: Hollyoon's Blog
 description: 自我记录、自我发现、自我探索与自我表达
 keywords: blogger，个人博客，程序员，前端开发，喜欢美食和旅行，记录所见所闻
-author: 森の银
+author: Hollyoon
 language: en
 timezone: ""
 
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Chic
+theme: maupassant
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
