@@ -22,12 +22,16 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: npm run build
-      - name: Upload Pages artifact
+      - name: Checkout latest theme
+        uses: actions/checkout@v4
+        with:
+          path: themes/maupassant
+      - name: Build with Hexo
+        run: npx hexo g
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-            path: ./public
+          path: ./public
 
   deploy:
     needs: build
