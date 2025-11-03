@@ -15,6 +15,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Debug - List theme directory
+        run: |
+          echo "Checking themes/maupassant directory:"
+          ls -la themes/maupassant/ || echo "Theme directory not found!"
+          echo "Checking _config.yml:"
+          test -f themes/maupassant/_config.yml && echo "✓ _config.yml exists" || echo "✗ _config.yml missing"
+          echo "Checking layout directory:"
+          test -d themes/maupassant/layout && echo "✓ layout directory exists" || echo "✗ layout directory missing"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -27,9 +36,9 @@ jobs:
         run: npx hexo generate
 
       - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Hollyoon/hollyoon.github.io.git
-          git push origin HEAD:gh-pages --force
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
 
