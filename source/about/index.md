@@ -10,5 +10,5 @@ date: 2024-02-25 15:39:50
 
 * JavaScript，HTML，CSS
 * Vue，Angular，React，Uniapp，小程序
-* Java，Redis
+* Java，Redis，SQL
 
